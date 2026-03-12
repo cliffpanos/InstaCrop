@@ -5,7 +5,7 @@
   "description": "Client-only web app that validates and auto-fixes images to meet Instagram max-quality photo rules.",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && rm -rf docs && mkdir -p docs && cp -R dist/* docs/",
+    "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
