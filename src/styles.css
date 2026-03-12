@@ -8,6 +8,7 @@
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
   --header-bg: rgba(255, 255, 255, 0.8);
+  --header-gradient: linear-gradient(135deg, rgba(225, 48, 108, 0.05) 0%, transparent 45%, transparent 55%, rgba(249, 133, 41, 0.04) 100%);
   --accent: #e1306c;
   --accent-hover: #c13584;
   --badge-pass: #34c759;
@@ -34,6 +35,7 @@
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
     --header-bg: rgba(28, 28, 30, 0.8);
+    --header-gradient: linear-gradient(135deg, rgba(225, 48, 108, 0.08) 0%, transparent 45%, transparent 55%, rgba(249, 133, 41, 0.06) 100%);
     --accent: #e1306c;
     --accent-hover: #f06292;
     --badge-pass: #30d158;
@@ -84,7 +86,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--header-bg);
+  background: var(--header-gradient), var(--header-bg);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid var(--border);
