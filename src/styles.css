@@ -104,11 +104,11 @@ body {
   gap: 12px;
 }
 
-.logo-dot {
+.logo-icon {
   width: 28px;
   height: 28px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #f58529, #e1306c);
+  flex-shrink: 0;
+  display: block;
 }
 
 h1 {
