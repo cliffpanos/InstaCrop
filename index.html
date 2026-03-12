@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>InstaCrop – Instagram-ready Image Prep</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Upload photos and automatically fix them for Instagram: correct size, aspect ratio, format, color space, and DPI."
+    />
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="app-header-inner">
+        <div class="branding">
+          <div class="logo-dot"></div>
+          <h1>InstaCrop</h1>
+        </div>
+        <p class="tagline">
+          Make your photos Instagram-ready in one step. All processing happens in your browser.
+        </p>
+        <div class="rules-summary">
+          <span>Width: 1080 px</span>
+          <span>Height: 566–1350 px</span>
+          <span>Aspect: 1:1 or 4:5</span>
+          <span>Format: JPG, sRGB, 72–300 DPI</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <section class="upload-section" aria-label="Upload images">
+        <div
+          id="drop-zone"
+          class="drop-zone"
+          tabindex="0"
+          aria-label="Drag and drop images here or use the file picker"
+        >
+          <p class="drop-zone-title">Drag &amp; drop images here</p>
+          <p class="drop-zone-subtitle">or</p>
+          <label class="file-input-label" for="file-input">
+            <span>Browse files</span>
+            <input
+              id="file-input"
+              type="file"
+              accept="image/*"
+              multiple
+              aria-label="Choose image files"
+            />
+          </label>
+          <p class="hint">Supported: JPG, PNG, WebP, HEIC (where supported by your browser).</p>
+        </div>
+
+        <div class="batch-actions" aria-label="Batch actions">
+          <div class="batch-left">
+            <label for="aspect-select">Target aspect</label>
+            <select id="aspect-select" aria-label="Target aspect ratio">
+              <option value="4:5">Vertical 4:5 (1080×1350)</option>
+              <option value="1:1">Square 1:1 (1080×1080)</option>
+            </select>
+          </div>
+          <div class="batch-right">
+            <button type="button" id="clear-all-btn" class="btn secondary" style="display: none;" aria-label="Clear all images and start over">Clear all</button>
+            <button id="fix-all-btn" class="btn primary" disabled>
+              Fix all &amp; download ZIP
+            </button>
+            <span id="batch-status" class="batch-status" aria-live="polite"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery-section" aria-label="Image list">
+        <div id="gallery" class="gallery-grid"></div>
+        <div id="empty-state" class="empty-state">
+          <p>No images yet.</p>
+          <p>Drop some photos above to see how they score against Instagram’s max-quality rules.</p>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+  </html>
+
